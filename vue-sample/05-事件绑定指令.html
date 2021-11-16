@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>事件绑定指令</title>
+
+        <script src="./lib/vue-2.6.12.js"></script>
+        <script>
+            window.onload = function () {
+                const vm = new Vue({
+                    el: '#app',
+                    data: {
+                        count: 0,
+                    },
+                    // methods 属性的作用是定义事件的处理函数
+                    methods: {
+                        add(n) {
+                            // 在 methods 处理函数中，this 就是 new 出来的 vm 实例对象
+                            console.log(vm === this);
+                            console.log(vm);
+                            this.count += n;
+                        },
+                        sub() {
+                            // console.log('触发了 sub 处理函数')
+                            this.count -= 1;
+                        },
+                        addEvent(e) {
+                            this.count += 2;
+                            console.log(e);
+
+                            // 判断 this.count 的值是否为偶数
+                            if (this.count % 2 === 0) {
+                                // 偶数
+                                e.target.style.backgroundColor = 'red';
+                            } else {
+                                // 奇数
+                                e.target.style.backgroundColor = '';
+                            }
+                        },
+                        addEvent1(e, n) {
+                            this.count += n;
+                            console.log(e);
+
+                            // 判断 this.count 的值是否为偶数
+                            if (this.count % 2 === 0) {
+                                // 偶数
+                                e.target.style.backgroundColor = 'pink';
+                            } else {
+                                // 奇数
+                                e.target.style.backgroundColor = '';
+                            }
+                        },
+                        show() {
+                            console.log('点击了 a 链接');
+                        },
+                        btnHandler() {
+                            console.log('btnHandler');
+                        },
+                        divHandler() {
+                            console.log('divHandler');
+                        },
+                        clearInput(e) {
+                            console.log('触发了 clearInput 方法');
+                            e.target.value = '';
+                        },
+                        commitAjax(e) {
+                            console.log('触发了 commitAjax 方法');
+                            console.log('发送数据：' + e.target.value);
+                        },
+                    },
+                });
+            };
+        </script>
+    </head>
+
+    <body>
+        <div id="app">
+            <p>count 的值是：{{ count }}</p>
+            <!-- 直接触发 JavaScript 代码 -->
+            <button v-on:click="count += 10">JavaScript 代码 +10</button>
+            <!-- 在绑定事件处理函数的时候，可以使用 () 传递参数 -->
+            <button v-on:click="add(1)">函数传参 +1</button>
+            <!-- v-on: 指令可以被简写为 @ -->
+            <button @click="sub">指令简写 -1</button>
+
+            <!-- 原生的 DOM 事件绑定接收事件参数对象 event -->
+            <button @click="addEvent">获取原生 DOM 事件对象 +2</button>
+            <!-- vue 提供了内置变量，名字叫做 $event，它就是原生 DOM 的事件对象 event -->
+            <button @click="addEvent1($event, 3)">
+                获取 vue 内置 $event 事件对象 +3
+            </button>
+
+            <hr />
+
+            <!-- 事件修饰符 .prevent - 调用 event.preventDefault() -->
+            <a href="#" @click.prevent="show">跳转</a>
+
+            <hr />
+
+            <div
+                style="
+                    height: 150px;
+                    background-color: orange;
+                    padding-left: 100px;
+                    line-height: 150px;
+                "
+                @click="divHandler"
+            >
+                <!-- 事件修饰符 .stop - 调用 event.stopPropagation() -->
+                <button @click.stop="btnHandler">按钮</button>
+            </div>
+
+            <hr />
+
+            <!-- 指定事件按键修饰符 -->
+            <input
+                type="text"
+                @keyup.esc="clearInput"
+                @keyup.enter="commitAjax"
+            />
+        </div>
+    </body>
+</html>

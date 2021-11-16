@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>内容渲染指令</title>
+
+        <script src="./lib/vue-2.6.12.js"></script>
+        <script>
+            window.onload = function () {
+                const vm = new Vue({
+                    el: '#app',
+                    data: {
+                        username: 'MooNkirA',
+                        gender: '女',
+                        info: '<h4 style="color: red; font-weight: bold;">我是用样式的标签字符串</h4>',
+                        msg: '我是初始值',
+                    },
+                });
+
+                // 改变 msg 属性值，测试 v-once 的一次性地插值效果
+                vm.msg = '我已经变了！！';
+            };
+        </script>
+    </head>
+
+    <body>
+        <div id="app">
+            <!-- v-text 更新元素的标签内容 -->
+            <p v-text="username"></p>
+            <!-- 注意：v-text 更新的内容会将标签体内容全部覆盖 -->
+            <p v-text="gender">性别：</p>
+
+            <hr />
+
+            <!-- 文本插值 {{  }}。双大括号会将数据解释为普通文本，而非 HTML 代码。 -->
+            <p>姓名：{{ username }}</p>
+            <p>性别：{{ gender }}</p>
+            <!-- 通过使用 v-once 指令，能执行一次性地插值，当数据改变时，插值处的内容不会更新。但请留心这会影响到该节点上的其它数据绑定： -->
+            <span v-once>这个将不会改变: {{ msg }}</span>
+
+            <hr />
+
+            <div v-text="info"></div>
+            <div>{{ info }}</div>
+            <!-- v-html 将标签体内容直接作为 HTML —— 会忽略解析 property 值中的数据绑定。 -->
+            <div v-html="info"></div>
+        </div>
+    </body>
+</html>

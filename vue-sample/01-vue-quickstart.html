@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vue 快速入门</title>
+
+        <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+
+        <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+
+        <!-- 1. 导入 Vue 的库文件，在 window 全局就有了 Vue 这个构造函数 -->
+        <script src="./lib/vue-2.6.12.js"></script>
+        <!-- 2. 创建 Vue 的实例对象 -->
+        <script>
+            window.onload = function () {
+                // 创建 Vue 的实例对象，即 ViewModel
+                const vm = new Vue({
+                    // el 属性是固定的写法，表示当前 vm 实例要控制页面上的哪个区域，接收的值是一个选择器，即View 视图区域
+                    el: '#app',
+                    // data 指向的对象就是要渲染到页面上的数据，即 Model 数据源
+                    data: {
+                        username: 'MooNkirA',
+                    },
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <!-- 在页面中声明一个被 vue 所控制的 DOM 区域。
+            其中id的值为创建vue实例对象时的 el 属性挂载点，
+            由此 DOM 元素就由 vue 控制，可将数据源填充到此 DOM 元素中 -->
+        <div id="app">{{ username }}</div>
+    </body>
+</html>
