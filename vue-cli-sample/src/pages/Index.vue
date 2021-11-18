@@ -1,15 +1,15 @@
 <template>
-  <div>
-    <button class="btn btn--stripe" @click="jumpTo('/mustache')">
-      文件插值表达式
-    </button>
-    <button class="btn btn--stripe" @click="jumpTo('/hello')">
-      hello world
-    </button>
-    <!-- <button class="btn btn--stripe">Button</button>
-    <a href="#" class="btn btn--stripe">Link</a>
-    <button class="btn btn--stripe btn--radius">Aggressive Radius</button>
-    <button class="btn btn--stripe btn--large">Large Button</button> -->
+  <div class="body">
+    <h2>内容渲染指令</h2>
+    <div class="container">
+      <template v-for="(item, index) in sampleList">
+        <div class="button-wrapper" :key="index">
+          <div class="button" @click="jumpTo(item.path)">
+            <span class="text">{{ item.text }}</span>
+          </div>
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -17,7 +17,14 @@
 export default {
   name: 'Index',
   data() {
-    return {};
+    return {
+      sampleList: [
+        { text: 'v-text 示例', path: '/v-text' },
+        { text: '文本插值表达式 {} 示例', path: '/mustache' },
+        { text: 'v-html 示例', path: '/v-html' },
+        { text: 'hello world', path: '/hello' },
+      ],
+    };
   },
   methods: {
     // 跳转
@@ -29,102 +36,107 @@ export default {
 </script>
 
 <style scoped lang="css">
-@-webkit-keyframes stripe-slide {
-  0% {
-    background-position: 0% 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
+h2 {
+  color: yellow;
 }
-@keyframes stripe-slide {
-  0% {
-    background-position: 0% 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
+
+.container .button-wrapper:nth-child(5n + 1) div:before {
+  border-color: #ff8b94;
 }
-body {
-  width: 100%;
+
+.container .button-wrapper:nth-child(5n + 1) div {
+  border-color: #ff8b94;
+}
+
+.container .button-wrapper:nth-child(5n + 2) div:before {
+  border-color: #02a7e1;
+}
+
+.container .button-wrapper:nth-child(5n + 2) div {
+  border-color: #02a7e1;
+}
+
+.container .button-wrapper:nth-child(5n + 3) div:before {
+  border-color: #98cb4a;
+}
+
+.container .button-wrapper:nth-child(5n + 3) div {
+  border-color: #98cb4a;
+}
+
+.container .button-wrapper:nth-child(5n + 4) div:before {
+  border-color: #ae5a41;
+}
+
+.container .button-wrapper:nth-child(5n + 4) div {
+  border-color: #ae5a41;
+}
+
+.container .button-wrapper:nth-child(5n + 5) div:before {
+  border-color: #f7d842;
+}
+
+.container .button-wrapper:nth-child(5n + 5) div {
+  border-color: #f7d842;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+  background-color: #555555;
+}
+
+.container {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  font-family: sans-serif;
+  flex: 0;
+  flex-wrap: wrap;
 }
-
-.btn {
-  overflow: visible;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  font: inherit;
-  line-height: normal;
-  cursor: pointer;
-  -moz-user-select: text;
-  display: block;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 16px 36px 22px;
-  background-color: #fff;
-  color: #666;
-  border: 2px solid #666;
-  border-radius: 6px;
-  margin-bottom: 16px;
-  transition: all 0.5s ease;
-}
-.btn:-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-.btn--stripe {
+.container .button-wrapper {
   overflow: hidden;
+}
+.container .button-wrapper .button {
   position: relative;
-}
-.btn--stripe:after {
-  content: '';
-  display: block;
-  height: 7px;
-  width: 100%;
-  background-image: repeating-linear-gradient(
-    45deg,
-    #666,
-    #666 1px,
-    transparent 2px,
-    transparent 5px
-  );
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-top: 1px solid #666;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-size: 7px 7px;
-}
-.btn--stripe:hover {
-  background-color: #666;
+  text-transform: uppercase;
   color: #fff;
-  border-color: #000;
+  border: solid 2px #02a7e1;
+  padding: 10px 30px;
+  z-index: 1;
 }
-.btn--stripe:hover:after {
-  background-image: repeating-linear-gradient(
-    45deg,
-    #fff,
-    #fff 1px,
-    transparent 2px,
-    transparent 5px
-  );
-  border-top: 1px solid #000;
-  -webkit-animation: stripe-slide 12s infinite linear forwards;
-  animation: stripe-slide 12s infinite linear forwards;
+.container .button-wrapper .button::before {
+  position: absolute;
+  border-bottom: solid 3px;
+  content: '';
+  min-height: 10px;
+  min-width: 100px;
+  z-index: 200;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 60%;
+  opacity: 1;
+  transition-duration: 0.5s;
 }
-.btn--large {
-  width: 50%;
+.container .button-wrapper .button::after {
+  pointer-events: none;
+  position: absolute;
+  content: '';
+  width: 600px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #555555;
+  top: -120%;
+  left: -30%;
+  z-index: -10;
+  transition-duration: 2s;
 }
-.btn--radius {
-  border-radius: 36px;
+.container .button-wrapper .button:hover:after {
+  width: 0;
+  height: 50px;
+}
+.container .button-wrapper .button:hover:before {
+  opacity: 0;
 }
 </style>>
