@@ -48,14 +48,28 @@ export default {
         },
         {
           title: '双向绑定指令',
-          sampleList: [{ text: 'v-model 数据双向绑定示例', path: '/v-model' }],
+          sampleList: [
+            { text: 'v-model 数据双向绑定示例', path: '/v-model' },
+            { text: 'v-model 修饰符示例', path: '/v-model-modifiers' },
+          ],
+        },
+        {
+          title: '条件渲染指令',
+          sampleList: [
+            { text: 'v-if 条件渲染示例', path: '/v-if' },
+            { text: 'v-show 条件渲染示例', path: '/v-show' },
+          ],
+        },
+        {
+          title: '列表渲染指令',
+          sampleList: [{ text: 'v-for 列表渲染示例', path: '/v-for' }],
         },
         {
           title: '其他',
           sampleList: [
             { text: 'vue 快速入门示例', path: '/vue-quickstart' },
             { text: 'vue 实例创建示例', path: '/vue-instance' },
-            { text: 'hello world', path: '/hello' },
+            { text: 'vue 相关文档', path: '/hello' },
           ],
         },
       ],
@@ -135,7 +149,7 @@ h2 {
 }
 .container .button-wrapper .button {
   position: relative;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: #fff;
   border: solid 2px #02a7e1;
   padding: 10px 30px;

@@ -1,10 +1,10 @@
-# vue-cli-sample
+# vue-sample
 
 > A Vue.js project
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 

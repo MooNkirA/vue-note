@@ -4,7 +4,7 @@
     <h2>Essential Links</h2>
     <ul>
       <li>
-        <a href="https://vuejs.org" target="_blank"> Core Docs </a>
+        <a href="https://cn.vuejs.org" target="_blank"> Core Docs </a>
       </li>
       <li>
         <a href="https://forum.vuejs.org" target="_blank"> Forum </a>
@@ -25,13 +25,15 @@
     <h2>Ecosystem</h2>
     <ul>
       <li>
-        <a href="http://router.vuejs.org/" target="_blank"> vue-router </a>
+        <a href="https://router.vuejs.org/zh/" target="_blank"> vue-router </a>
       </li>
       <li>
-        <a href="http://vuex.vuejs.org/" target="_blank"> vuex </a>
+        <a href="https://vuex.vuejs.org/zh//" target="_blank"> vuex </a>
       </li>
       <li>
-        <a href="http://vue-loader.vuejs.org/" target="_blank"> vue-loader </a>
+        <a href="https://vue-loader.vuejs.org/zh/" target="_blank">
+          vue-loader
+        </a>
       </li>
       <li>
         <a href="https://github.com/vuejs/awesome-vue" target="_blank">
@@ -48,9 +50,9 @@ export default {
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',
-    };
+    }
   },
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

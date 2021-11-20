@@ -12,6 +12,11 @@ import Von from '@/pages/V-on'
 import VonFunction from '@/pages/V-on-function'
 import VonEventModifiers from '@/pages/V-on-event-modifiers'
 import VonKeyModifiers from '@/pages/V-on-key-modifiers'
+import VModel from '@/pages/V-model'
+import VModelModifiers from '@/pages/V-model-modifiers'
+import Vif from '@/pages/V-if'
+import Vshow from '@/pages/V-show'
+import Vfor from '@/pages/V-for'
 import VueQuickstart from '@/pages/Vue-quickstart'
 import VueInstance from '@/pages/Vue-instance'
 
@@ -73,6 +78,31 @@ export default new Router({
       path: '/vue-quickstart',
       name: 'vue-quickstart',
       component: VueQuickstart
+    },
+    {
+      path: '/v-model',
+      name: 'v-model',
+      component: VModel
+    },
+    {
+      path: '/v-model-modifiers',
+      name: 'v-model-modifiers',
+      component: VModelModifiers
+    },
+    {
+      path: '/v-if',
+      name: 'v-if',
+      component: Vif
+    },
+    {
+      path: '/v-show',
+      name: 'v-show',
+      component: Vshow
+    },
+    {
+      path: '/v-for',
+      name: 'v-for',
+      component: Vfor
     },
     {
       path: '/vue-instance',
