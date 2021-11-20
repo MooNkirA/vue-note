@@ -1,38 +1,73 @@
 <template>
   <div class="body">
-    <h2>内容渲染指令</h2>
-    <div class="container">
-      <template v-for="(item, index) in sampleList">
-        <div class="button-wrapper" :key="index">
-          <div class="button" @click="jumpTo(item.path)">
-            <span class="text">{{ item.text }}</span>
+    <template v-for="(c, idx) in contentList">
+      <h2 :key="'t' + idx">{{ c.title }}</h2>
+      <div :key="'c' + idx" class="container">
+        <template v-for="(item, index) in c.sampleList">
+          <div class="button-wrapper" :key="index">
+            <div class="button" @click="jumpTo(item.path)">
+              <span class="text">{{ item.text }}</span>
+            </div>
           </div>
-        </div>
-      </template>
-    </div>
+        </template>
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Index',
+  name: 'index',
   data() {
     return {
-      sampleList: [
-        { text: 'v-text 示例', path: '/v-text' },
-        { text: '文本插值表达式 {} 示例', path: '/mustache' },
-        { text: 'v-html 示例', path: '/v-html' },
-        { text: 'hello world', path: '/hello' },
+      // 内容列表
+      contentList: [
+        {
+          title: '内容渲染指令',
+          sampleList: [
+            { text: 'v-text 示例', path: '/v-text' },
+            { text: '文本插值表达式 {{ }} 示例', path: '/mustache' },
+            { text: 'v-html 示例', path: '/v-html' },
+          ],
+        },
+        {
+          title: '属性绑定指令',
+          sampleList: [
+            { text: 'v-bind 示例', path: '/v-bind' },
+            { text: 'Javascript 表达式示例', path: '/js-expression' },
+          ],
+        },
+        {
+          title: '事件绑定指令',
+          sampleList: [
+            { text: 'v-on 事件绑定示例', path: '/v-on' },
+            { text: 'v-on 事件绑定函数示例', path: '/v-on-function' },
+            { text: 'v-on 事件修饰符示例', path: '/v-on-event-modifiers' },
+            { text: 'v-on 按键修饰符示例', path: '/v-on-key-modifiers' },
+          ],
+        },
+        {
+          title: '双向绑定指令',
+          sampleList: [{ text: 'v-model 数据双向绑定示例', path: '/v-model' }],
+        },
+        {
+          title: '其他',
+          sampleList: [
+            { text: 'vue 快速入门示例', path: '/vue-quickstart' },
+            { text: 'vue 实例创建示例', path: '/vue-instance' },
+            { text: 'hello world', path: '/hello' },
+          ],
+        },
       ],
-    };
+    }
   },
   methods: {
     // 跳转
     jumpTo(path) {
-      this.$router.push(path);
+      this.$router.push(path)
     },
   },
-};
+}
 </script>
 
 <style scoped lang="css">
@@ -139,4 +174,4 @@ h2 {
 .container .button-wrapper .button:hover:before {
   opacity: 0;
 }
-</style>>
+</style>

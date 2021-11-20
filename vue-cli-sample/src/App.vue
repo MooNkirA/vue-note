@@ -1,13 +1,14 @@
 <template>
+  <!-- 在页面中声明 vue 挂载点的 DOM 区域 -->
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
 }
 </script>
 
@@ -18,6 +19,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
+}
+/* 设置全局的代码块样式 */
+.code {
+  border: 2px solid pink;
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
 }
 </style>
