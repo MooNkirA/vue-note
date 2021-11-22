@@ -3,22 +3,30 @@ import Router from 'vue-router'
 
 import HelloWorld from '@/components/HelloWorld'
 import Index from '@/pages/Index'
-import Mustache from '@/pages/Mustache'
-import Vtext from '@/pages/V-text'
-import Vhtml from '@/pages/V-html'
-import Vbind from '@/pages/V-bind'
-import JsExpression from '@/pages/Js-expression'
-import Von from '@/pages/V-on'
-import VonFunction from '@/pages/V-on-function'
-import VonEventModifiers from '@/pages/V-on-event-modifiers'
-import VonKeyModifiers from '@/pages/V-on-key-modifiers'
-import VModel from '@/pages/V-model'
-import VModelModifiers from '@/pages/V-model-modifiers'
-import Vif from '@/pages/V-if'
-import Vshow from '@/pages/V-show'
-import Vfor from '@/pages/V-for'
+import Mustache from '@/pages/directive/Mustache'
+import Vtext from '@/pages/directive/V-text'
+import Vhtml from '@/pages/directive/V-html'
+import Vbind from '@/pages/directive/V-bind'
+import JsExpression from '@/pages/directive/Js-expression'
+import Von from '@/pages/directive/V-on'
+import VonFunction from '@/pages/directive/V-on-function'
+import VonEventModifiers from '@/pages/directive/V-on-event-modifiers'
+import VonKeyModifiers from '@/pages/directive/V-on-key-modifiers'
+import VModel from '@/pages/directive/V-model'
+import VModelModifiers from '@/pages/directive/V-model-modifiers'
+import Vif from '@/pages/directive/V-if'
+import Vshow from '@/pages/directive/V-show'
+import Vfor from '@/pages/directive/V-for'
+import VforFilter from '@/pages/directive/V-for-filter'
 import VueQuickstart from '@/pages/Vue-quickstart'
 import VueInstance from '@/pages/Vue-instance'
+import VueBasicCommand from '@/pages/sample/vue-basic-command'
+import VueFilters from '@/pages/filters/Vue-filters'
+import VueGlobalFilters from '@/pages/filters/Vue-global-filters'
+import VueChainedFilters from '@/pages/filters/Vue-chained-filters'
+import VueArgumentsFilters from '@/pages/filters/Vue-arguments-filters'
+import VueWatch from '@/pages/Vue-watch'
+import VueWatchOption from '@/pages/Vue-watch-option'
 
 Vue.use(Router)
 
@@ -105,6 +113,11 @@ export default new Router({
       component: Vfor
     },
     {
+      path: '/v-for-filter',
+      name: 'v-for-filter',
+      component: VforFilter
+    },
+    {
       path: '/vue-instance',
       name: 'vue-instance',
       component: VueInstance
@@ -113,6 +126,41 @@ export default new Router({
       path: '/hello',
       name: 'hello',
       component: HelloWorld
+    },
+    {
+      path: '/vue-basic-command',
+      name: 'vue-basic-command',
+      component: VueBasicCommand
+    },
+    {
+      path: '/vue-filters',
+      name: 'vue-filters',
+      component: VueFilters
+    },
+    {
+      path: '/vue-global-filters',
+      name: 'vue-global-filters',
+      component: VueGlobalFilters
+    },
+    {
+      path: '/vue-chained-filters',
+      name: 'vue-chained-filters',
+      component: VueChainedFilters
+    },
+    {
+      path: '/vue-arguments-filters',
+      name: 'vue-arguments-filters',
+      component: VueArgumentsFilters
+    },
+    {
+      path: '/vue-watch',
+      name: 'vue-watch',
+      component: VueWatch
+    },
+    {
+      path: '/vue-watch-option',
+      name: 'vue-watch-option',
+      component: VueWatchOption
     }
   ]
 })

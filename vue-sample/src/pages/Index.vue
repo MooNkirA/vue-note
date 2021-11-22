@@ -62,7 +62,27 @@ export default {
         },
         {
           title: '列表渲染指令',
-          sampleList: [{ text: 'v-for 列表渲染示例', path: '/v-for' }],
+          sampleList: [
+            { text: 'v-for 列表渲染示例', path: '/v-for' },
+            { text: 'v-for 高级使用示例-过滤与排序', path: '/v-for-filter' },
+          ],
+        },
+        {
+          title: 'vue 过滤器',
+          sampleList: [
+            { text: '自定义过滤器基础示例', path: '/vue-filters' },
+            { text: '自定义全局过滤器示例', path: '/vue-global-filters' },
+            { text: '过滤器串联调用示例', path: '/vue-chained-filters' },
+            { text: '过滤器传递参数示例', path: '/vue-arguments-filters' },
+          ],
+        },
+        {
+          title: '计算属性与侦听器',
+          sampleList: [
+            { text: 'computed 计算属性基础示例', path: '/vue-computed' },
+            { text: 'watch 侦听器示例', path: '/vue-watch' },
+            { text: 'watch 侦听器不同方式定义示例', path: '/vue-watch-option' },
+          ],
         },
         {
           title: '其他',
@@ -70,6 +90,15 @@ export default {
             { text: 'vue 快速入门示例', path: '/vue-quickstart' },
             { text: 'vue 实例创建示例', path: '/vue-instance' },
             { text: 'vue 相关文档', path: '/hello' },
+          ],
+        },
+        {
+          title: 'vue 应用案例',
+          sampleList: [
+            {
+              text: 'vue 基础指令使用案例 - 品牌列表',
+              path: '/vue-basic-command',
+            },
           ],
         },
       ],
@@ -132,7 +161,7 @@ h2 {
 .body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   background-color: #555555;
 }
 
