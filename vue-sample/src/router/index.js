@@ -25,8 +25,10 @@ import VueFilters from '@/pages/filters/Vue-filters'
 import VueGlobalFilters from '@/pages/filters/Vue-global-filters'
 import VueChainedFilters from '@/pages/filters/Vue-chained-filters'
 import VueArgumentsFilters from '@/pages/filters/Vue-arguments-filters'
-import VueWatch from '@/pages/Vue-watch'
-import VueWatchOption from '@/pages/Vue-watch-option'
+import VueWatch from '@/pages/watchers/Vue-watch'
+import VueWatchOption from '@/pages/watchers/Vue-watch-option'
+import VueComputed from '@/pages/computedProperties/Vue-computed'
+import ComponentsBasic from '@/pages/componentsSample/Components-basic'
 
 Vue.use(Router)
 
@@ -161,6 +163,16 @@ export default new Router({
       path: '/vue-watch-option',
       name: 'vue-watch-option',
       component: VueWatchOption
+    },
+    {
+      path: '/vue-computed',
+      name: 'vue-computed',
+      component: VueComputed
+    },
+    {
+      path: '/components-basic',
+      name: 'components-basic',
+      component: ComponentsBasic
     }
   ]
 })

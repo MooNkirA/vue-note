@@ -85,6 +85,10 @@ export default {
           ],
         },
         {
+          title: '组件',
+          sampleList: [{ text: '组件基础示例', path: '/components-basic' }],
+        },
+        {
           title: '其他',
           sampleList: [
             { text: 'vue 快速入门示例', path: '/vue-quickstart' },
