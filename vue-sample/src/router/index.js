@@ -29,6 +29,7 @@ import VueWatch from '@/pages/watchers/Vue-watch'
 import VueWatchOption from '@/pages/watchers/Vue-watch-option'
 import VueComputed from '@/pages/computedProperties/Vue-computed'
 import ComponentsBasic from '@/pages/componentsSample/Components-basic'
+import ComponentsGlobal from '@/pages/componentsSample/Components-global'
 
 Vue.use(Router)
 
@@ -173,6 +174,11 @@ export default new Router({
       path: '/components-basic',
       name: 'components-basic',
       component: ComponentsBasic
+    },
+    {
+      path: '/components-global',
+      name: 'components-global',
+      component: ComponentsGlobal
     }
   ]
 })

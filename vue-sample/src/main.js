@@ -21,6 +21,14 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
+/* 全局组件注册 */
+// 1. 导入需要全局注册的注册
+import GlobalComponent from './components/GlobalComponent.vue'
+// 2. 注册组件
+//    参数1：组件的注册名称，字符串类型
+//    参数2：需要被全局注册的组件
+Vue.component('MyGlobalComponent', GlobalComponent)
+
 /* eslint-disable no-new */
 // 创建 Vue 的实例对象
 new Vue({

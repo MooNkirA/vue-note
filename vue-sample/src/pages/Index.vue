@@ -86,7 +86,10 @@ export default {
         },
         {
           title: '组件',
-          sampleList: [{ text: '组件基础示例', path: '/components-basic' }],
+          sampleList: [
+            { text: '局部组件基础示例', path: '/components-basic' },
+            { text: '全局组件基础示例', path: '/components-global' },
+          ],
         },
         {
           title: '其他',
