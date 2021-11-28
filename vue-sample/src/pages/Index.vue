@@ -87,8 +87,20 @@ export default {
         {
           title: '组件',
           sampleList: [
-            { text: '局部组件基础示例', path: '/components-basic' },
-            { text: '全局组件基础示例', path: '/components-global' },
+            { text: '局部组件示例', path: '/components-basic' },
+            { text: '全局组件示例', path: '/components-global' },
+            {
+              text: '组件 props 类型检查示例',
+              path: '/components-props-check',
+            },
+            {
+              text: '组件 props 传递方式示例',
+              path: '/components-props-passing',
+            },
+            { text: '组件的生命周期示例', path: '/components-lifecycle' },
+            { text: '父组件传递子组件数据示例', path: '/parent-pass-child' },
+            { text: '子组件传递父组件数据示例', path: '/child-pass-parent' },
+            { text: '兄弟组件数据传递示例', path: '/component-pass-component' },
           ],
         },
         {

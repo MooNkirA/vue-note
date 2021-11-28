@@ -65,7 +65,8 @@
               >
             </div>
           </td>
-          <td>{{ item.time }}</td>
+          <!-- 注：dateFormater 是全局注册的过滤器，使用第三方时间类库 Day.js 来实现时间的格式化 -->
+          <td>{{ item.time | dateFormater }}</td>
           <td>
             <a href="javascript:;" @click="remove(item.id)">删除</a>
           </td>

@@ -30,6 +30,12 @@ import VueWatchOption from '@/pages/watchers/Vue-watch-option'
 import VueComputed from '@/pages/computedProperties/Vue-computed'
 import ComponentsBasic from '@/pages/componentsSample/Components-basic'
 import ComponentsGlobal from '@/pages/componentsSample/Components-global'
+import ComponentsPropsCheck from '@/pages/componentsSample/Components-props-check'
+import ComponentsPropsPassing from '@/pages/componentsSample/Components-props-passing'
+import ComponentsLifecycle from '@/pages/componentsSample/Components-lifecycle'
+import ParentPassChild from '@/pages/componentsSample/Parent-pass-child'
+import ChildPassParent from '@/pages/componentsSample/Child-pass-parent'
+import ComponentPassComponent from '@/pages/componentsSample/Component-pass-component'
 
 Vue.use(Router)
 
@@ -179,6 +185,36 @@ export default new Router({
       path: '/components-global',
       name: 'components-global',
       component: ComponentsGlobal
+    },
+    {
+      path: '/components-props-check',
+      name: 'components-props-check',
+      component: ComponentsPropsCheck
+    },
+    {
+      path: '/components-props-passing',
+      name: 'components-props-passing',
+      component: ComponentsPropsPassing
+    },
+    {
+      path: '/components-lifecycle',
+      name: 'components-lifecycle',
+      component: ComponentsLifecycle
+    },
+    {
+      path: '/parent-pass-child',
+      name: 'parent-pass-child',
+      component: ParentPassChild
+    },
+    {
+      path: '/child-pass-parent',
+      name: 'child-pass-parent',
+      component: ChildPassParent
+    },
+    {
+      path: '/component-pass-component',
+      name: 'component-pass-component',
+      component: ComponentPassComponent
     }
   ]
 })

@@ -13,7 +13,7 @@
 import ButtonCounter from '@/components/ButtonCounter'
 
 export default {
-  name: 'Components-basic',
+  name: 'components-basic',
   // 组件的基础使用步骤2: 在 components 属性中注册组件
   components: {
     ButtonCounter,
@@ -24,7 +24,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+/* style 节点的 scoped 属性，用来自动为每个组件分配唯一的“自定义属性”，
+  并自动为当前组件的 DOM 标签和 style 样式应用这个自定义属性，防止组件的样式冲突问题 */
 .container {
   background-color: pink;
   border: 2px solid red;
