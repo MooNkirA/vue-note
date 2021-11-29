@@ -26,6 +26,7 @@ export default {
   align-items: center;
   width: 80%;
   margin: 0 auto;
+  padding-bottom: 10px;
   border: 2px solid skyblue;
 }
 </style>

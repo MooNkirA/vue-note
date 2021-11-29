@@ -104,6 +104,22 @@ export default {
           ],
         },
         {
+          title: 'ref 访问组件实例或元素',
+          sampleList: [
+            { text: 'ref 访问元素示例', path: '/ref-dom' },
+            { text: 'ref 访问子组件示例', path: '/ref-component' },
+          ],
+        },
+        {
+          title: '实例方法 | 生命周期相关',
+          sampleList: [
+            {
+              text: '更新 DOM 延迟回调操作 vm.$nextTick(callback) 示例',
+              path: '/vue-nexttick',
+            },
+          ],
+        },
+        {
           title: '其他',
           sampleList: [
             { text: 'vue 快速入门示例', path: '/vue-quickstart' },
@@ -117,6 +133,10 @@ export default {
             {
               text: 'vue 基础指令使用案例 - 品牌列表',
               path: '/vue-basic-command',
+            },
+            {
+              text: 'vue 组件化综合案例 - 购物车',
+              path: '/vue-components-cart',
             },
           ],
         },

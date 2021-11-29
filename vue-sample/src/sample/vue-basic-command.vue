@@ -122,5 +122,5 @@ export default {
 </script>
 
 <style scoped>
-@import '../../lib/bootstrap.css';
+@import '../lib/bootstrap.css';
 </style>

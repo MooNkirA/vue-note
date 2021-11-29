@@ -20,7 +20,6 @@ import Vfor from '@/pages/directive/V-for'
 import VforFilter from '@/pages/directive/V-for-filter'
 import VueQuickstart from '@/pages/Vue-quickstart'
 import VueInstance from '@/pages/Vue-instance'
-import VueBasicCommand from '@/pages/sample/vue-basic-command'
 import VueFilters from '@/pages/filters/Vue-filters'
 import VueGlobalFilters from '@/pages/filters/Vue-global-filters'
 import VueChainedFilters from '@/pages/filters/Vue-chained-filters'
@@ -36,6 +35,13 @@ import ComponentsLifecycle from '@/pages/componentsSample/Components-lifecycle'
 import ParentPassChild from '@/pages/componentsSample/Parent-pass-child'
 import ChildPassParent from '@/pages/componentsSample/Child-pass-parent'
 import ComponentPassComponent from '@/pages/componentsSample/Component-pass-component'
+import RefDom from '@/pages/refsAttribute/Ref-dom'
+import RefComponent from '@/pages/refsAttribute/Ref-component'
+import VueNextTick from '@/pages/lifecycleMethod/Vue-nexttick'
+
+/* 示例项目 */
+import VueBasicCommand from '@/sample/vue-basic-command'
+import CartApp from '@/sample/vue-components-sample-cart/CartApp'
 
 Vue.use(Router)
 
@@ -137,11 +143,6 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/vue-basic-command',
-      name: 'vue-basic-command',
-      component: VueBasicCommand
-    },
-    {
       path: '/vue-filters',
       name: 'vue-filters',
       component: VueFilters
@@ -215,6 +216,31 @@ export default new Router({
       path: '/component-pass-component',
       name: 'component-pass-component',
       component: ComponentPassComponent
+    },
+    {
+      path: '/ref-dom',
+      name: 'ref-dom',
+      component: RefDom
+    },
+    {
+      path: '/ref-component',
+      name: 'ref-component',
+      component: RefComponent
+    },
+    {
+      path: '/vue-nexttick',
+      name: 'vue-nexttick',
+      component: VueNextTick
+    },
+    {
+      path: '/vue-basic-command',
+      name: 'vue-basic-command',
+      component: VueBasicCommand
+    },
+    {
+      path: '/vue-components-cart',
+      name: 'vue-components-cart',
+      component: CartApp
     }
   ]
 })
