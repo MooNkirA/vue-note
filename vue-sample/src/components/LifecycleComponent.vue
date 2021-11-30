@@ -92,13 +92,20 @@ export default {
   /* 
     被 keep-alive 缓存的组件激活时调用。
     该钩子在服务器端渲染期间不被调用。
+
+    当组件第一次被创建的时候，既会执行 created 生命周期，也会执行 activated 生命周期
+    之后，当组件被激活的时候，只会触发 activated 生命周期，不再触发 created。因为组件没有被重新创建
   */
-  activated() {},
+  activated() {
+    console.log('被 keep-alive 缓存的子组件 activated 方法执行了...')
+  },
   /* 
     被 keep-alive 缓存的组件激活时调用。
     该钩子在服务器端渲染期间不被调用。
   */
-  deactivated() {},
+  deactivated() {
+    console.log('被 keep-alive 缓存的子组件 deactivated 方法执行了...')
+  },
   methods: {},
 }
 </script>

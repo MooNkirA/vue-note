@@ -101,6 +101,20 @@ export default {
             { text: '父组件传递子组件数据示例', path: '/parent-pass-child' },
             { text: '子组件传递父组件数据示例', path: '/child-pass-parent' },
             { text: '兄弟组件数据传递示例', path: '/component-pass-component' },
+            { text: '动态组件示例', path: '/dynamic-components' },
+            {
+              text: '动态组件使用 keep-alive 示例',
+              path: '/dynamic-components-keep-alive',
+            },
+          ],
+        },
+        {
+          title: '插槽',
+          sampleList: [
+            { text: '插槽基础示例', path: '/slot-basic' },
+            { text: '具名插槽示例', path: '/named-slot' },
+            { text: '作用域插槽示例', path: '/scoped-slot' },
+            { text: '动态插槽名示例', path: '/dynamic-slot-names' },
           ],
         },
         {

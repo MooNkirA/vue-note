@@ -38,6 +38,12 @@ import ComponentPassComponent from '@/pages/componentsSample/Component-pass-comp
 import RefDom from '@/pages/refsAttribute/Ref-dom'
 import RefComponent from '@/pages/refsAttribute/Ref-component'
 import VueNextTick from '@/pages/lifecycleMethod/Vue-nexttick'
+import DynamicComponents from '@/pages/componentsSample/Dynamic-components'
+import DynamicComponentsKeepAlive from '@/pages/componentsSample/Dynamic-components-keep-alive'
+import SlotBasic from '@/pages/slot/Slot-basic'
+import NamedSlot from '@/pages/slot/Named-slot'
+import ScopedSlot from '@/pages/slot/Scoped-slot'
+import DynamicSlotNames from '@/pages/slot/Dynamic-slot-names'
 
 /* 示例项目 */
 import VueBasicCommand from '@/sample/vue-basic-command'
@@ -231,6 +237,36 @@ export default new Router({
       path: '/vue-nexttick',
       name: 'vue-nexttick',
       component: VueNextTick
+    },
+    {
+      path: '/dynamic-components',
+      name: 'dynamic-components',
+      component: DynamicComponents
+    },
+    {
+      path: '/dynamic-components-keep-alive',
+      name: 'dynamic-components-keep-alive',
+      component: DynamicComponentsKeepAlive
+    },
+    {
+      path: '/slot-basic',
+      name: 'slot-basic',
+      component: SlotBasic
+    },
+    {
+      path: '/named-slot',
+      name: 'named-slot',
+      component: NamedSlot
+    },
+    {
+      path: '/scoped-slot',
+      name: 'scoped-slot',
+      component: ScopedSlot
+    },
+    {
+      path: '/dynamic-slot-names',
+      name: 'dynamic-slot-names',
+      component: DynamicSlotNames
     },
     {
       path: '/vue-basic-command',
