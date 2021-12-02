@@ -1,3 +1,5 @@
+/* 当前项目的路由模块 */
+// 1. 如果使用模块化机制编程，导入Vue和VueRouter，用于调用 Vue.use(VueRouter)
 import Vue from 'vue'
 import Router from 'vue-router'
 
@@ -44,239 +46,283 @@ import SlotBasic from '@/pages/slot/Slot-basic'
 import NamedSlot from '@/pages/slot/Named-slot'
 import ScopedSlot from '@/pages/slot/Scoped-slot'
 import DynamicSlotNames from '@/pages/slot/Dynamic-slot-names'
+import CustomDirectivesBasic from '@/pages/customDirectives/custom-directives-basic'
+import CustomDirectivesFunctionShorthand from '@/pages/customDirectives/custom-directives-function-shorthand'
+import CustomDirectivesGlobal from '@/pages/customDirectives/custom-directives-global'
 
 /* 示例项目 */
 import VueBasicCommand from '@/sample/vue-basic-command'
 import CartApp from '@/sample/vue-components-sample-cart/CartApp'
 
+// 2. 调用 Vue.use() 函数，将 VueRouter 安装成 Vue 的插件
 Vue.use(Router)
 
+/* 
+  3. 创建路由的实例对象，在构造函数中传入 `routes` 配置或者其他配置参数。
+  并通过 export default 对外共享此路由实例对象。在main.js文件引入，挂载到vue根实例中。
+*/
 export default new Router({
+  /* 
+    routes 选项数组，主要用于配置 “url（hash 地址）” 与 “组件” 的映射关系
+    routes 接受类型：Array<RouteConfig>
+    RouteConfig 的类型定义：
+      interface RouteConfig = {
+        path: string, // 路由url
+        component?: Component, // 组件实例
+        name?: string, // 命名路由
+        components?: { [name: string]: Component }, // 命名视图组件
+        redirect?: string | Location | Function,
+        props?: boolean | Object | Function,
+        alias?: string | Array<string>,
+        children?: Array<RouteConfig>, // 嵌套路由
+        beforeEnter?: (to: Route, from: Route, next: Function) => void,
+        meta?: any,
+
+        // 2.6.0+
+        caseSensitive?: boolean, // 匹配规则是否大小写敏感？(默认值：false)
+        pathToRegexpOptions?: Object // 编译正则的选项
+      }
+  */
   routes: [
     {
       path: '/',
       name: 'index',
-      component: Index
+      component: Index,
     },
     {
       path: '/v-text',
       name: 'v-text',
-      component: Vtext
+      component: Vtext,
     },
     {
       path: '/mustache',
       name: 'mustache',
-      component: Mustache
+      component: Mustache,
     },
     {
       path: '/v-html',
       name: 'v-html',
-      component: Vhtml
+      component: Vhtml,
     },
     {
       path: '/v-bind',
       name: 'v-bind',
-      component: Vbind
+      component: Vbind,
     },
     {
       path: '/js-expression',
       name: 'js-expression',
-      component: JsExpression
+      component: JsExpression,
     },
     {
       path: '/v-on',
       name: 'v-on',
-      component: Von
+      component: Von,
     },
     {
       path: '/v-on-function',
       name: 'v-on-function',
-      component: VonFunction
+      component: VonFunction,
     },
     {
       path: '/v-on-event-modifiers',
       name: 'v-on-event-modifiers',
-      component: VonEventModifiers
+      component: VonEventModifiers,
     },
     {
       path: '/v-on-key-modifiers',
       name: 'v-on-key-modifiers',
-      component: VonKeyModifiers
+      component: VonKeyModifiers,
     },
     {
       path: '/vue-quickstart',
       name: 'vue-quickstart',
-      component: VueQuickstart
+      component: VueQuickstart,
     },
     {
       path: '/v-model',
       name: 'v-model',
-      component: VModel
+      component: VModel,
     },
     {
       path: '/v-model-modifiers',
       name: 'v-model-modifiers',
-      component: VModelModifiers
+      component: VModelModifiers,
     },
     {
       path: '/v-if',
       name: 'v-if',
-      component: Vif
+      component: Vif,
     },
     {
       path: '/v-show',
       name: 'v-show',
-      component: Vshow
+      component: Vshow,
     },
     {
       path: '/v-for',
       name: 'v-for',
-      component: Vfor
+      component: Vfor,
     },
     {
       path: '/v-for-filter',
       name: 'v-for-filter',
-      component: VforFilter
+      component: VforFilter,
     },
     {
       path: '/vue-instance',
       name: 'vue-instance',
-      component: VueInstance
+      component: VueInstance,
     },
     {
       path: '/hello',
       name: 'hello',
-      component: HelloWorld
+      component: HelloWorld,
     },
     {
       path: '/vue-filters',
       name: 'vue-filters',
-      component: VueFilters
+      component: VueFilters,
     },
     {
       path: '/vue-global-filters',
       name: 'vue-global-filters',
-      component: VueGlobalFilters
+      component: VueGlobalFilters,
     },
     {
       path: '/vue-chained-filters',
       name: 'vue-chained-filters',
-      component: VueChainedFilters
+      component: VueChainedFilters,
     },
     {
       path: '/vue-arguments-filters',
       name: 'vue-arguments-filters',
-      component: VueArgumentsFilters
+      component: VueArgumentsFilters,
     },
     {
       path: '/vue-watch',
       name: 'vue-watch',
-      component: VueWatch
+      component: VueWatch,
     },
     {
       path: '/vue-watch-option',
       name: 'vue-watch-option',
-      component: VueWatchOption
+      component: VueWatchOption,
     },
     {
       path: '/vue-computed',
       name: 'vue-computed',
-      component: VueComputed
+      component: VueComputed,
     },
     {
       path: '/components-basic',
       name: 'components-basic',
-      component: ComponentsBasic
+      component: ComponentsBasic,
     },
     {
       path: '/components-global',
       name: 'components-global',
-      component: ComponentsGlobal
+      component: ComponentsGlobal,
     },
     {
       path: '/components-props-check',
       name: 'components-props-check',
-      component: ComponentsPropsCheck
+      component: ComponentsPropsCheck,
     },
     {
       path: '/components-props-passing',
       name: 'components-props-passing',
-      component: ComponentsPropsPassing
+      component: ComponentsPropsPassing,
     },
     {
       path: '/components-lifecycle',
       name: 'components-lifecycle',
-      component: ComponentsLifecycle
+      component: ComponentsLifecycle,
     },
     {
       path: '/parent-pass-child',
       name: 'parent-pass-child',
-      component: ParentPassChild
+      component: ParentPassChild,
     },
     {
       path: '/child-pass-parent',
       name: 'child-pass-parent',
-      component: ChildPassParent
+      component: ChildPassParent,
     },
     {
       path: '/component-pass-component',
       name: 'component-pass-component',
-      component: ComponentPassComponent
+      component: ComponentPassComponent,
     },
     {
       path: '/ref-dom',
       name: 'ref-dom',
-      component: RefDom
+      component: RefDom,
     },
     {
       path: '/ref-component',
       name: 'ref-component',
-      component: RefComponent
+      component: RefComponent,
     },
     {
       path: '/vue-nexttick',
       name: 'vue-nexttick',
-      component: VueNextTick
+      component: VueNextTick,
     },
     {
       path: '/dynamic-components',
       name: 'dynamic-components',
-      component: DynamicComponents
+      component: DynamicComponents,
     },
     {
       path: '/dynamic-components-keep-alive',
       name: 'dynamic-components-keep-alive',
-      component: DynamicComponentsKeepAlive
+      component: DynamicComponentsKeepAlive,
     },
     {
       path: '/slot-basic',
       name: 'slot-basic',
-      component: SlotBasic
+      component: SlotBasic,
     },
     {
       path: '/named-slot',
       name: 'named-slot',
-      component: NamedSlot
+      component: NamedSlot,
     },
     {
       path: '/scoped-slot',
       name: 'scoped-slot',
-      component: ScopedSlot
+      component: ScopedSlot,
     },
     {
       path: '/dynamic-slot-names',
       name: 'dynamic-slot-names',
-      component: DynamicSlotNames
+      component: DynamicSlotNames,
+    },
+    {
+      path: '/custom-directives-basic',
+      name: 'custom-directives-basic',
+      component: CustomDirectivesBasic,
+    },
+    {
+      path: '/custom-directives-function-shorthand',
+      name: 'custom-directives-function-shorthand',
+      component: CustomDirectivesFunctionShorthand,
+    },
+    {
+      path: '/custom-directives-global',
+      name: 'custom-directives-global',
+      component: CustomDirectivesGlobal,
     },
     {
       path: '/vue-basic-command',
       name: 'vue-basic-command',
-      component: VueBasicCommand
+      component: VueBasicCommand,
     },
     {
       path: '/vue-components-cart',
       name: 'vue-components-cart',
-      component: CartApp
-    }
-  ]
+      component: CartApp,
+    },
+  ],
 })

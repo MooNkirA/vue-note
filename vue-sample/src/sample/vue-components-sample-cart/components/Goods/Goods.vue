@@ -25,7 +25,9 @@
         <!-- 商品价格 -->
         <span class="goods-price">￥{{ price }}</span>
         <!-- 商品的数量 -->
-        <Counter :num="count" :id="id"></Counter>
+        <!-- <Counter :num="count" :id="id"></Counter> -->
+        <!-- 商品的数量(优化成插槽的方式) -->
+        <slot></slot>
       </div>
     </div>
   </div>

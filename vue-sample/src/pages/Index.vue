@@ -118,6 +118,20 @@ export default {
           ],
         },
         {
+          title: '自定义指令',
+          sampleList: [
+            { text: '自定义指令基础示例', path: '/custom-directives-basic' },
+            {
+              text: '自定义指令函数简写示例',
+              path: '/custom-directives-function-shorthand',
+            },
+            {
+              text: '全局自定义指令使用示例',
+              path: '/custom-directives-global',
+            },
+          ],
+        },
+        {
           title: 'ref 访问组件实例或元素',
           sampleList: [
             { text: 'ref 访问元素示例', path: '/ref-dom' },

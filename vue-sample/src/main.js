@@ -2,10 +2,14 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+// 导入路由模块，获取路由实例对象
+// 在进行模块化导入的时候，如果给定的是文件夹，则默认导入此文件夹下，名字叫做 index.js 的文件
 import router from './router'
 // 导入多个过滤器，定义在一个过滤器的js文件中
 import * as filters from './plugins/filters'
+import axios from 'axios'
 
+// vue 项目的提示信息是否开启配置（没有大用处）
 Vue.config.productionTip = false
 
 /* 通过 Vue.filter()  注册单个自定义全局过滤器 */
@@ -29,14 +33,35 @@ import GlobalComponent from './components/GlobalComponent.vue'
 //    参数2：需要被全局注册的组件
 Vue.component('MyGlobalComponent', GlobalComponent)
 
+/* 全局自定义指令注册 */
+/* Vue.directive('color', {
+  bind(el, binding) {
+    el.style.color = binding.value
+  },
+  update(el, binding) {
+    el.style.color = binding.value
+  }
+}) */
+// 指令的 `bind` 和 `update` 钩子函数相同处理，则对象格式的自定义指令可以简写成函数格式：
+Vue.directive('color', function(el, binding) {
+  el.style.color = binding.value
+})
+
+// 全局配置 axios 的请求根路径
+axios.defaults.baseURL = 'http://xxxxxxxx'
+// 将 axios 挂载到 Vue.prototype 上，可以使每个 .vue 组件的实例通过 this.$http 来发起请求
+Vue.prototype.$http = axios
+// 不过通常不使用此种方式，一般都会封装一个专门发送http的js文件，然后在一些api文件中定义多种请求方法，
+// 组件使用时引用不同的请求方法，从而达到 API 接口的复用
+
 /* eslint-disable no-new */
 // 创建 Vue 的实例对象
 new Vue({
   // el 属性提供一个在页面上已存在的 DOM 元素作为 Vue 实例的挂载目标
   el: '#app',
-  router,
+  router, // 挂载路由实例对象
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
 })
 
 // Vue 实例的 $mount() 方法，作用和 el 属性完全一样！

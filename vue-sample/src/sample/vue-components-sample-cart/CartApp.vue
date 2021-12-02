@@ -3,25 +3,14 @@
     <!-- Header 头部区域组件 -->
     <Header title="购物车案例"></Header>
     <!-- 循环渲染每一个商品的信息 -->
-    <Goods
-      v-for="item in list"
-      :key="item.id"
-      :id="item.id"
-      :title="item.goods_name"
-      :pic="item.goods_img"
-      :price="item.goods_price"
-      :state="item.goods_state"
-      :count="item.goods_count"
-      @state-change="getNewState"
-    ></Goods>
+    <!-- :count="item.goods_count" -->
+    <Goods v-for="item in list" :key="item.id" :id="item.id" :title="item.goods_name" :pic="item.goods_img" :price="item.goods_price" :state="item.goods_state" @state-change="getNewState">
+      <!-- 在 Goods 组件中定义的默认插槽 -->
+      <Counter :num="item.goods_count" @num-change="getNewNum(item, $event)"></Counter>
+    </Goods>
 
     <!-- Footer 区域 -->
-    <Footer
-      :isfull="fullState"
-      :amount="amt"
-      :all="total"
-      @full-change="getFullState"
-    ></Footer>
+    <Footer :isfull="fullState" :amount="amt" :all="total" @full-change="getFullState"></Footer>
   </div>
 </template>
 
@@ -32,6 +21,8 @@ import axios from 'axios'
 import Header from './components/Header/Header'
 import Goods from './components/Goods/Goods'
 import Footer from './components/Footer/Footer'
+// 导入 Counter 组件
+import Counter from './components/Counter/Counter.vue'
 
 import bus from '@/utils/eventBus'
 
@@ -46,7 +37,7 @@ export default {
   computed: {
     // 动态计算出全选的状态是 true 还是 false
     fullState() {
-      return this.list.every((item) => item.goods_state)
+      return this.list.every(item => item.goods_state)
     },
     // 已勾选商品的总价格
     amt() {
@@ -73,8 +64,8 @@ export default {
     // 调用请求数据的方法
     this.initCartList()
 
-    bus.$on('share', (val) => {
-      this.list.some((item) => {
+    bus.$on('share', val => {
+      this.list.some(item => {
         if (item.id === val.id) {
           item.goods_count = val.value
           return true
@@ -95,7 +86,7 @@ export default {
     // 接收子组件传递过来的数据
     // e 的格式为 { id, value }
     getNewState(e) {
-      this.list.some((item) => {
+      this.list.some(item => {
         if (item.id === e.id) {
           item.goods_state = e.value
           // 终止后续的循环
@@ -105,13 +96,19 @@ export default {
     },
     // 接收 Footer 子组件传递过来的全选按钮的状态
     getFullState(val) {
-      this.list.forEach((item) => (item.goods_state = val))
+      this.list.forEach(item => (item.goods_state = val))
+    },
+    // 获取 Counter 组件发过来的最新的数量值
+    getNewNum(item, e) {
+      console.log(item, e)
+      item.goods_count = e
     },
   },
   components: {
     Header,
     Goods,
     Footer,
+    Counter,
   },
 }
 </script>
