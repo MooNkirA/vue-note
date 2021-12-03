@@ -2,7 +2,12 @@
   <div class="movie-container">
     <!-- this.$route 是路由的“参数对象” -->
     <!-- this.$router 是路由的“导航对象” -->
-    <h3>Movie 组件 --- {{ $route.params.mid }} --- {{ mid }}</h3>
+    <h3>Movie 组件</h3>
+
+    <p>$route.params 获取动态路由的路径参数id： {{ $route.params.id }}</p>
+    <p>获取动态路由的路由规则开启 props 传参： {{ id }}</p>
+    <p></p>
+
     <button @click="showThis">打印 this</button>
     <button @click="goback">后退</button>
     <!-- 在行内使用编程式导航跳转的时候，this 必须要省略，否则会报错！ -->
@@ -14,8 +19,8 @@
 <script>
 export default {
   name: 'Movie',
-  // 接收 props 数据
-  props: ['mid'],
+  // 接收路由规则开启 props 传参
+  props: ['id'],
   methods: {
     showThis() {
       console.log(this)

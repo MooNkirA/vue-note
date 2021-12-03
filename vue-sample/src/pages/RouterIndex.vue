@@ -11,7 +11,16 @@
     -->
     <!-- <a href="#/home">首页</a> -->
     <router-link to="/vue-router-index/home">首页</router-link>
-    <router-link to="/vue-router-index/movie">电影</router-link>
+    |
+    <!-- <router-link to="/vue-router-index/movie">电影</router-link> -->
+    <!-- 动态路由匹配
+        当匹配到一个路由时，参数值会被设置到 `this.$route.params`，可以在每个组件内使用。
+        也可以在一个路由中设置多段“路径参数”，对应的值都会设置到 `$route.params` 中
+     -->
+    <router-link to="/vue-router-index/movie/1">当幸福敲门来</router-link>
+    <router-link to="/vue-router-index/movie/2">你的名字</router-link>
+    <router-link to="/vue-router-index/movie/3">鬼灭之刃</router-link>
+    |
     <router-link to="/vue-router-index/about">关于</router-link>
 
     <hr />

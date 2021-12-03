@@ -3,7 +3,7 @@
     <h3>About 组件</h3>
 
     <!-- 子级路由链接 -->
-    <router-link to="/vue-router-index/about/tab1">tab1</router-link>
+    <router-link to="/vue-router-index/about">tab1</router-link>
     <router-link to="/vue-router-index/about/tab2">tab2</router-link>
 
     <hr />

@@ -170,6 +170,10 @@ export default {
               text: 'vue 组件化综合案例 - 购物车',
               path: '/vue-components-cart',
             },
+            {
+              text: 'Vue Router 路由综合案例 - 后台系统',
+              path: '/vue-router-admin',
+            },
           ],
         },
       ],
