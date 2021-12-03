@@ -156,6 +156,10 @@ export default {
           ],
         },
         {
+          title: 'Vue Router',
+          sampleList: [{ text: 'vue-router基础使用', path: '/vue-router-index' }],
+        },
+        {
           title: 'vue 应用案例',
           sampleList: [
             {
