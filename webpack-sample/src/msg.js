@@ -1,3 +1,3 @@
 export default {
-  msg: 'hello Vue.'
+  msg: 'hello Webpack.'
 }
