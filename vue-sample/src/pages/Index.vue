@@ -35,6 +35,8 @@ export default {
           sampleList: [
             { text: 'v-bind 示例', path: '/v-bind' },
             { text: 'Javascript 表达式示例', path: '/js-expression' },
+            { text: 'v-bind 绑定元素 class 属性示例', path: '/v-bind-class' },
+            { text: 'v-bind 绑定元素 style 内联样式示例', path: '/v-bind-style' },
           ],
         },
         {

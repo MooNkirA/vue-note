@@ -4,6 +4,8 @@ import Mustache from '@/pages/directive/Mustache'
 import Vtext from '@/pages/directive/V-text'
 import Vhtml from '@/pages/directive/V-html'
 import Vbind from '@/pages/directive/V-bind'
+import VbindClass from '@/pages/directive/V-bind-class'
+import VbindStyle from '@/pages/directive/V-bind-style'
 import JsExpression from '@/pages/directive/Js-expression'
 import Von from '@/pages/directive/V-on'
 import VonFunction from '@/pages/directive/V-on-function'
@@ -48,7 +50,7 @@ import CustomDirectivesGlobal from '@/pages/customDirectives/custom-directives-g
 export default [
   {
     path: '/v-text',
-    name: 'v-text',
+    name: Vtext.name,
     component: Vtext,
   },
   {
@@ -65,6 +67,16 @@ export default [
     path: '/v-bind',
     name: 'v-bind',
     component: Vbind,
+  },
+  {
+    path: '/v-bind-class',
+    name: 'v-bind-class',
+    component: VbindClass,
+  },
+  {
+    path: '/v-bind-style',
+    name: 'v-bind-style',
+    component: VbindStyle,
   },
   {
     path: '/js-expression',
