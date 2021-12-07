@@ -3,13 +3,11 @@
     <template v-for="(c, idx) in contentList">
       <h2 :key="'t' + idx">{{ c.title }}</h2>
       <div :key="'c' + idx" class="container">
-        <template v-for="(item, index) in c.sampleList">
-          <div class="button-wrapper" :key="index">
-            <div class="button" @click="jumpTo(item.path)">
-              <span class="text">{{ item.text }}</span>
-            </div>
+        <div v-for="(item, index) in c.sampleList" class="button-wrapper" :key="index">
+          <div class="button" @click="jumpTo(item.path)">
+            <span class="text">{{ item.text }}</span>
           </div>
-        </template>
+        </div>
       </div>
     </template>
   </div>
@@ -167,10 +165,6 @@ export default {
             {
               text: 'vue 基础指令使用案例 - 品牌列表',
               path: '/vue-basic-command',
-            },
-            {
-              text: 'vue 组件化综合案例 - 购物车',
-              path: '/vue-components-cart',
             },
             {
               text: 'Vue Router 路由综合案例 - 后台系统',

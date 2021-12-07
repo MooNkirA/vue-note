@@ -27,6 +27,17 @@
     <div class="box" :style="{ backgroundColor: rgb }">
       {{ rgb }}
     </div>
+
+    <hr />
+    <label for="num_ipt">输出数字进行计算（观察控制台执行次数的输入）：</label>
+    <input type="text" id="num_ipt" v-model.number="num" />
+    <p>computed 计算属性渲染的 {{ num }} 乘以 2 的值为：{{ double }}</p>
+    <p>computed 计算属性渲染的 {{ num }} 乘以 2 的值为：{{ double }}</p>
+    <p>computed 计算属性渲染的 {{ num }} 乘以 2 的值为：{{ double }}</p>
+
+    <p>method 方式渲染的 {{ num }} 乘以 3 的值为：{{ triple() }}</p>
+    <p>method 方式渲染的 {{ num }} 乘以 3 的值为：{{ triple() }}</p>
+    <p>method 方式渲染的 {{ num }} 乘以 3 的值为：{{ triple() }}</p>
   </div>
 </template>
 
@@ -41,6 +52,7 @@ export default {
       g: 255,
       // 蓝色
       b: 255,
+      num: 0,
       code: `
       `,
     }
@@ -51,6 +63,16 @@ export default {
     // rgb 作为一个计算属性，被定义成了方法格式，最终，在这个方法中，要返回一个生成好的 rgb(x,x,x) 的字符串
     rgb() {
       return `rgb(${this.r}, ${this.g}, ${this.b})`
+    },
+    double() {
+      console.log('计算属性被执行了')
+      return this.num * 2
+    },
+  },
+  methods: {
+    triple() {
+      console.log('方法计算被执行了')
+      return this.num * 3
     },
   },
 }

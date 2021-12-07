@@ -1,6 +1,5 @@
 /* 综合示例项目路由 */
 import VueBasicCommand from '@/sample/vue-basic-command'
-import CartApp from '@/sample/vue-components-sample-cart/CartApp'
 import RouterApp from '@/sample/vue-router-admin/RouterApp'
 
 /* 路由综合案例 */
@@ -19,11 +18,6 @@ export default [
     path: '/vue-basic-command',
     name: 'vue-basic-command',
     component: VueBasicCommand,
-  },
-  {
-    path: '/vue-components-cart',
-    name: 'vue-components-cart',
-    component: CartApp,
   },
   {
     path: '/vue-router-admin',
