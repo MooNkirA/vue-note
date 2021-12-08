@@ -3,7 +3,7 @@
     <div class="login-box">
       <!-- 头像区域 -->
       <div class="text-center avatar-box">
-        <img src="../../../assets/logo.png" class="img-thumbnail avatar" alt="" />
+        <img src="../assets/logo.png" class="img-thumbnail avatar" alt="" />
       </div>
 
       <!-- 表单区域 -->
@@ -11,12 +11,25 @@
         <!-- 登录名称 -->
         <div class="form-group form-inline">
           <label for="username">登录名称</label>
-          <input type="text" class="form-control ml-2" id="username" placeholder="请输入登录名称" autocomplete="off" v-model.trim="username" />
+          <input
+            type="text"
+            class="form-control ml-2"
+            id="username"
+            placeholder="请输入登录名称"
+            autocomplete="off"
+            v-model.trim="username"
+          />
         </div>
         <!-- 登录密码 -->
         <div class="form-group form-inline">
           <label for="password">登录密码</label>
-          <input type="password" class="form-control ml-2" id="password" placeholder="请输入登录密码" v-model.trim="password" />
+          <input
+            type="password"
+            class="form-control ml-2"
+            id="password"
+            placeholder="请输入登录密码"
+            v-model.trim="password"
+          />
         </div>
         <!-- 登录和重置按钮 -->
         <div class="form-group form-inline d-flex justify-content-end">
@@ -48,7 +61,7 @@ export default {
         // 1. 存储 token
         localStorage.setItem('token', 'Bearer xxxx')
         // 2. 跳转到后台主页
-        this.$router.push('/vue-router-admin/home')
+        this.$router.push('/home')
       } else {
         // 登录失败
         localStorage.removeItem('token')

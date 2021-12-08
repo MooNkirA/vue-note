@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Index from '@/pages/Index'
+// import Index from '@/pages/Index'
 
 /* 导入不同模块的路由配置 */
 import VueSampleModule from './vueSampleModule'
@@ -37,11 +37,11 @@ const router = new Router({
       }
   */
   routes: [
-    {
-      path: '/',
-      name: 'index',
-      component: Index,
-    },
+    // {
+    //   path: '/',
+    //   name: 'index',
+    //   component: Index,
+    // },
     ...VueSampleModule,
     ...CompositiveModule,
     ...VueRouterModule,
@@ -61,14 +61,7 @@ const router = new Router({
         next(error): (2.4.0+) 如果传入 next 的参数是一个 Error 实例，则导航会被终止且该错误会被传递给 router.onError() 注册过的回调。
 */
 router.beforeEach((to, from, next) => {
-  // 定义需要校验的地址集合
-  const checkList = ['/vue-router-admin/home', '/vue-router-admin/home/users', '/vue-router-admin/home/rights']
-
-  // 当前地址在校验范围内，并且localStorage里没有token，则进行拦截
-  if (checkList.includes(to.path) && !localStorage.getItem('token')) {
-    next('/vue-router-admin/login')
-  }
-
+  /* 可以完成一些业务逻辑 */
   // 确保 `next` 函数在任何给定的导航守卫中都被严格调用一次。如果不执行 next 函数，则不会进行任何路由的跳转
   next()
 })

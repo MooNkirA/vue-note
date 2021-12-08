@@ -9,6 +9,11 @@ import router from './router'
 import * as filters from './plugins/filters'
 import axios from 'axios'
 
+/* 完整引入 element-ui */
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)
+
 // vue 项目的提示信息是否开启配置（没有大用处）
 Vue.config.productionTip = false
 

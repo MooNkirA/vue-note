@@ -82,8 +82,8 @@ export default {
   methods: {
     add(n) {
       // 在 methods 处理函数中，this 就是 new 出来的 vm 实例对象
-      console.log(vm === this)
-      console.log(vm)
+      // console.log(vm === this)
+      // console.log(vm)
       this.count += n
     },
     addEvent(e) {
@@ -116,5 +116,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

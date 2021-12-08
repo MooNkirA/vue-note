@@ -23,7 +23,7 @@ export default {
       // 1. 清空 token
       localStorage.removeItem('token')
       // 2. 跳转到登录页面
-      this.$router.push('/vue-router-admin/login')
+      this.$router.push('/login')
     },
   },
 }

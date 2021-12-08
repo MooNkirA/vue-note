@@ -7,5 +7,4 @@
 ```
 -- root
   |-- vue-basic-command.vue  vue 基础指令使用案例 - 品牌列表
-  |-- vue-router-admin.vue  Vue Router 路由综合案例 - 后台系统
 ```

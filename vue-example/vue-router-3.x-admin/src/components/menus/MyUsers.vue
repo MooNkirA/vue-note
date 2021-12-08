@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     gotoDetail(id) {
-      this.$router.push(`/vue-router-admin/home/userinfo/${id}`)
+      this.$router.push(`/home/userinfo/${id}`)
     },
   },
 }

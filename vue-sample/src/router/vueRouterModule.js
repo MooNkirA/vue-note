@@ -31,6 +31,7 @@ export default [
       { path: 'movie/:id', component: Movie, props: true },
       {
         path: 'about',
+        name: 'named-about',
         component: About,
         /* 
           `children` 配置就是像 `routes` 配置一样的路由配置数组，所以可以嵌套多层路由

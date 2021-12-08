@@ -15,11 +15,11 @@ export default {
   data() {
     return {
       menus: [
-        { to: '/vue-router-admin/home/users', label: '用户管理' },
-        { to: '/vue-router-admin/home/rights', label: '权限管理' },
-        { to: '/vue-router-admin/home/goods', label: '商品管理' },
-        { to: '/vue-router-admin/home/orders', label: '订单管理' },
-        { to: '/vue-router-admin/home/settings', label: '系统设置' },
+        { to: '/home/users', label: '用户管理' },
+        { to: '/home/rights', label: '权限管理' },
+        { to: '/home/goods', label: '商品管理' },
+        { to: '/home/orders', label: '订单管理' },
+        { to: '/home/settings', label: '系统设置' },
       ],
     }
   },
@@ -40,7 +40,8 @@ export default {
     line-height: 50px;
     font-weight: bold;
     font-size: 14px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+      'Open Sans', 'Helvetica Neue', sans-serif;
     &:hover {
       background-color: #efefef;
       cursor: pointer;
