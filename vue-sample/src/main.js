@@ -7,7 +7,8 @@ import App from './App'
 import router from './router'
 // 导入多个过滤器，定义在一个过滤器的js文件中
 import * as filters from './plugins/filters'
-import axios from 'axios'
+// 导入 axios 的配置
+import './axios'
 
 /* 完整引入 element-ui */
 import ElementUI from 'element-ui'
@@ -51,13 +52,6 @@ Vue.component('MyGlobalComponent', GlobalComponent)
 Vue.directive('color', function(el, binding) {
   el.style.color = binding.value
 })
-
-// 全局配置 axios 的请求根路径
-axios.defaults.baseURL = 'http://xxxxxxxx'
-// 将 axios 挂载到 Vue.prototype 上，可以使每个 .vue 组件的实例通过 this.$http 来发起请求
-Vue.prototype.$http = axios
-// 不过通常不使用此种方式，一般都会封装一个专门发送http的js文件，然后在一些api文件中定义多种请求方法，
-// 组件使用时引用不同的请求方法，从而达到 API 接口的复用
 
 /* eslint-disable no-new */
 // 创建 Vue 的实例对象

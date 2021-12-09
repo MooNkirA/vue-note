@@ -210,7 +210,7 @@ export default {
   },
   methods: {
     handleOpen(key, keyPath) {
-      console.log(key, keyPath)
+      // console.log(key, keyPath)
     },
     clickMenu(index, menu) {
       // 获取当前路径

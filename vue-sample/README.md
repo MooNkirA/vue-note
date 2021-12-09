@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+vue-cli 旧版的项目结构与配置（暂存）
+
 ## Build Setup
 
 ```bash

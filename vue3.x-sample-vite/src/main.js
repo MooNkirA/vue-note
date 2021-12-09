@@ -4,7 +4,7 @@
 */
 import { createApp } from 'vue'
 import router from './router'
-// import axios from 'axios'
+import axios from 'axios'
 /* 完整引入，如果对打包后的文件大小不是很在乎，那么使用完整导入会更方便。 */
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
@@ -29,11 +29,12 @@ vueApp.use(ElementPlus, { size: 'small', zIndex: 3000 })
 
 // 为 axios 配置请求的根路径
 // axios.defaults.baseURL = 'https://www.xxx.com'
+console.log(axios)
 /* 
   将 axios 挂载为 vue 的全局自定义属性
   每个组件可以通过 this 直接访问到全局挂载的自定义属性
 */
-// vueApp.config.globalProperties.$http = axios
+vueApp.config.globalProperties.$http = axios
 
 // 4. 调用 mount() 把 App 组件的模板结构，渲染到指定的 el 区域中，即指定 vue 实际要控制的区域
 vueApp.mount('#app')
